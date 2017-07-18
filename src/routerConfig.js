@@ -12,6 +12,12 @@ const router = new VueRouter({
 	{name:'list', path: '/list', component: List },
 	{name:'listDetail', path: '/listDetail', component: ListDetail }
 ]
+
+
+
+
+
+
 })
 
 export default router
