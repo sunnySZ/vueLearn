@@ -21,7 +21,8 @@ import HeaderView from './header.vue'
 		methods:{
 			getData(){
 				this.$indicator.open()
-				this.id=this.$route.query.id;
+				this.id=this.$route.params.id;
+				console.log(this.$route)
 				//this.id=this.$route.path
 				var url='/lkp/v2/movie/subject/'+this.id;
             this.$http.get(url).then((res)=>{

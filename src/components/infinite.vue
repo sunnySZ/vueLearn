@@ -20,7 +20,7 @@ import HeaderView from './header.vue'
                     allLoaded:false,//默认下拉数据加载完毕，不调用loadBottom方法
                     params:{
                     	start:0,
-                    	count:10
+                    	count:15
                     }       
 			    }
 		},

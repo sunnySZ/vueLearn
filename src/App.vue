@@ -1,8 +1,12 @@
 <template>
   <div id="app">
-  <keep-alive>
-    <router-view></router-view>
-    </keep-alive>
+
+   <transition name='nameNaimate'>
+     <keep-alive>
+     <router-view></router-view>
+     </keep-alive>
+   </transition>
+
     <NavView></NavView>
   </div>
 </template>
@@ -25,7 +29,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -53,4 +57,14 @@ li {
 a {
   color: #42b983;
 }
+.nameNaimate-enter-active,.nameNaimate-leave-active{
+    transition:.4s all ease;
+    opacity:0.5;
+    translate3d:(0,300px,0);
+}
+.nameNaimate-enter,.nameNaimate-leave{
+       opacity:1;
+       translate3d:(0,30px,0);
+}
+
 </style>

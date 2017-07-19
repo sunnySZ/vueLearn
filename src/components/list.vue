@@ -2,13 +2,7 @@
 	<div>
 	   <HeaderView :title="title"></HeaderView>
 		<mt-loadmore :top-method="loadTop" @top-status-change="handleTopChange" ref="loadmore":bottom-method="loadBottom" :bottom-all-loaded="allLoaded" topLoadingText="我在加载中...">
-        <ul>
-          <li v-for="item in myData">     
-             <router-link :to="{ path: '/listDetail', query: { id: item.id }}">
-                {{ item.title }}
-             </router-link>
-          </li>
-        </ul>
+            <mt-cell  v-for="(item,index) in myData" :key="index" :title="item.title" is-link :to="{ name: 'listDetail',params: { id: item.id }}"></mt-cell>
       </mt-loadmore>
 	</div>
 </template>
@@ -99,7 +93,6 @@
 
 </script>
 <style>
-	ul{ padding: 0; margin: 0; }
-	ul li{ padding: 10px; margin: 2px; background-color: gray; display: block; text-align: left; color: white; }
+
 
 </style>
