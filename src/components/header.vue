@@ -24,3 +24,7 @@
 		}
 	}
 </script>
+<style lang="less" scoped>
+	.mint-header.is-fixed{z-index: 2;}
+	.mint-header{ background-color: green;}
+</style>
