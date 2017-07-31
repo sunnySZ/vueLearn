@@ -27,9 +27,6 @@
         <mt-cell title="即将上映" is-link :to="{ name:'infinite', params: { url: '/lkp/v2/movie/coming_soon?' }}" value="更多"></mt-cell>
         <mt-cell title="Top250" is-link :to="{ name:'infinite', params: { url: '/lkp/v2/movie/top250?' }}" value="更多"></mt-cell>
         <mt-cell title="口碑榜" is-link :to="{ name:'infinite', params: { url: '/lkp/v2/movie/weekly?' }}" value="更多"></mt-cell>
-
-
-
     </div>
 </template>
 <script>

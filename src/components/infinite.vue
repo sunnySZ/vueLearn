@@ -63,7 +63,7 @@
     }
 </script>
 <style lang="less">
-    .list_view { padding: 0; margin: 0;}
+    .list_view { padding: 0; margin: 0; display: flex; flex-wrap: wrap;}
     .list_view li{ width: 33.33%;  height:16rem; list-style: none; display: inline-block;}
     .list_view li img {
         width: 100%;
