@@ -4,8 +4,8 @@ var webpack = require('webpack')
 module.exports = {
     entry: './src/main.js',
     output: {
-        path: path.resolve(__dirname, './docs'),
-        publicPath: '/docs/',
+        path: path.resolve(__dirname, './dist'),
+        publicPath: '/dist/',
         filename: 'build.js'
     },
     module: {
@@ -41,7 +41,7 @@ module.exports = {
     },
     resolve: {
         alias: {
-            'vue$': 'vue/docs/vue.esm.js'
+            'vue$': 'vue/dist/vue.esm.js'
         }
     },
     devServer: {
@@ -50,7 +50,7 @@ module.exports = {
         proxy: {
             //将请求地址里的'/lkp'通过本地开发服务器webpack-dev-server转发到'https://api.douban.com'
             '/lkp': {
-                target: 'api.douban.com',
+                target: 'https://api.douban.com',
                 pathRewrite: {'^/lkp': ''}, //将 '^/lkp' 使用 '' 代替
                 changeOrigin: true
             },
