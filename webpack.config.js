@@ -50,7 +50,7 @@ module.exports = {
         proxy: {
             //将请求地址里的'/lkp'通过本地开发服务器webpack-dev-server转发到'https://api.douban.com'
             '/lkp': {
-                target: 'https://api.douban.com',
+                target: 'api.douban.com',
                 pathRewrite: {'^/lkp': ''}, //将 '^/lkp' 使用 '' 代替
                 changeOrigin: true
             },
