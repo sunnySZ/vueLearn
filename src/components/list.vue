@@ -64,7 +64,7 @@
         },
         methods: {
             getlistData(){
-                var url = 'https://api.douban.com/v2/movie/in_theaters?';
+                var url = '/lkp/v2/movie/in_theaters?';
                 this.$http.get(url, {params: this.params}).then((res) => {
                     this.myData = res.data.subjects
                     this.$indicator.close();//隐藏loading
