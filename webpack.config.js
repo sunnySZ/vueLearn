@@ -5,7 +5,7 @@ module.exports = {
     entry: './src/main.js',
     output: {
         path: path.resolve(__dirname, './dist'),
-        publicPath: '/dist/',
+        publicPath: './',
         filename: 'build.js'
     },
     module: {
@@ -52,6 +52,7 @@ module.exports = {
             '/lkp': {
                 target: 'https://api.douban.com',
                 pathRewrite: {'^/lkp': ''}, //将 '^/lkp' 使用 '' 代替
+                secure: false,  // 如果是https接口，需要配置这个参数
                 changeOrigin: true
             },
             '/flim': {
@@ -64,11 +65,11 @@ module.exports = {
     performance: {
         hints: false
     },
-    devtool: '#eval-source-map'
+ //   devtool: '#eval-source-map'
 }
 
 if (process.env.NODE_ENV === 'production') {
-    module.exports.devtool = '#source-map'
+
     // http://vue-loader.vuejs.org/en/workflow/production.html
     module.exports.plugins = (module.exports.plugins || []).concat([
         new webpack.DefinePlugin({
@@ -86,4 +87,6 @@ if (process.env.NODE_ENV === 'production') {
             minimize: true
         })
     ])
+}else{
+    module.exports.devtool = '#source-map'
 }
