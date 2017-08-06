@@ -48,16 +48,11 @@ module.exports = {
         historyApiFallback: true,
         noInfo: true,
         proxy: {
-            //将请求地址里的'/lkp'通过本地开发服务器webpack-dev-server转发到'https://api.douban.com'
-            '/lkp': {
+            //将请求地址里的'/v2'通过本地开发服务器webpack-dev-server转发到'https://api.douban.com'
+            '/v2': {
                 target: 'https://api.douban.com',
-                pathRewrite: {'^/lkp': ''}, //将 '^/lkp' 使用 '' 代替
+                pathRewrite: {'^/v2': '/v2'}, //将 '^/v2'    https://api.douban.com/v2
                 secure: false,  // 如果是https接口，需要配置这个参数
-                changeOrigin: true
-            },
-            '/flim': {
-                target: 'http://localhost:8080',
-                pathRewrite: {'^/flim': ''},
                 changeOrigin: true
             }
         }
